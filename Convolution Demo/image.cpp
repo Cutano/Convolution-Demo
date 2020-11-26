@@ -46,3 +46,54 @@ void my::image::set_channel(const int channel_index, const matrix2d& mat)
 {
 	mats_[channel_index] = mat;
 }
+
+int image::get_rows() const
+{
+	return rows_;
+}
+
+int image::get_columns() const
+{
+	return columns_;
+}
+
+int image::get_channels_count() const
+{
+	return channels_;
+}
+
+image::image(const image& other): rows_(other.rows_),
+                                  columns_(other.columns_),
+                                  channels_(other.channels_),
+                                  mats_(other.mats_)
+{
+}
+
+image::image(image&& other) noexcept: rows_(other.rows_),
+                                      columns_(other.columns_),
+                                      channels_(other.channels_),
+                                      mats_(std::move(other.mats_))
+{
+}
+
+image& image::operator=(const image& other)
+{
+	if (this == &other)
+		return *this;
+	rows_ = other.rows_;
+	columns_ = other.columns_;
+	channels_ = other.channels_;
+	mats_ = other.mats_;
+	return *this;
+}
+
+image& image::operator=(image&& other) noexcept
+{
+	if (this == &other)
+		return *this;
+	rows_ = other.rows_;
+	columns_ = other.columns_;
+	channels_ = other.channels_;
+	mats_ = std::move(other.mats_);
+	return *this;
+}

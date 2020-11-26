@@ -25,6 +25,21 @@ namespace my
 		matrix2d get_channel(int channel_index);
 
 		void set_channel(int channel_index, const matrix2d& mat);
+
+
+		int get_rows() const;
+
+		int get_columns() const;
+
+		int get_channels_count() const;
+
+		image(const image& other);
+
+		image(image&& other) noexcept;
+
+		image& operator=(const image& other);
+
+		image& operator=(image&& other) noexcept;
 	};
 }
 

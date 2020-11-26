@@ -5,8 +5,9 @@
 
 int main()
 {
-	my::image img("D:/OneDrive - Rinne's Space/Pictures/Avatar.jpg");
+	my::image img("D:/OneDrive - Rinne's Space/Pictures/wallhaven-512644.png");
 	img.show("window");
+
 	
 	/*imshow("Figure1", src);
 	src.copyTo()
