@@ -2,6 +2,7 @@
 
 #include "image.h"
 #include "matrix2d.h"
+#include <algorithm>
 
 namespace my
 {
