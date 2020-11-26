@@ -5,10 +5,8 @@
 
 int main()
 {
-	const auto src = cv::imread("D:/OneDrive - Rinne's Space/Pictures/Avatar.jpg");
-	
-	my::image img(src);
-	img.show("234");
+	my::image img("D:/OneDrive - Rinne's Space/Pictures/Avatar.jpg");
+	img.show("window");
 	
 	/*imshow("Figure1", src);
 	src.copyTo()

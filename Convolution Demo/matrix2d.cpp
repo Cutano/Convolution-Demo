@@ -122,7 +122,7 @@ std::vector<matrix2d>* matrix2d::convert_from_cv_mat(const cv::Mat& mat)
 		matrix2d temp(rows, columns);
 		for (auto i = 0; i < rows; i++) {
 			for (auto j = 0; j < columns; j++) {
-				temp.set(i, j, mat.at<uchar>(i, j));
+				temp.set(i, j, channel.at<uchar>(i, j));
 			}
 		}
 		result->push_back(temp);
